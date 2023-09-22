@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
     ComposedChart,
     Line,
@@ -38,6 +39,9 @@ const ReChart = () => {
           <Line type="monotone" dataKey="chemistry" stroke="#ff45dc" />
             </ComposedChart>
             </ResponsiveContainer>
+            <Link to={'/'}>
+                <button className='btn bg-red-600 text-white '>home</button>
+            </Link>
         </div>
     );
 };
