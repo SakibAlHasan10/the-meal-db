@@ -1,21 +1,12 @@
-import { useEffect, useState } from "react";
-import Category from "./Category";
+
+import { useLoaderData } from "react-router-dom";
 
 const AllMeal = () => {
-    const [categorys, setCategorys] = useState([])
-    useEffect(()=>{
-        fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
-        .then(res => res.json())
-        .then(data => setCategorys(data.categories))
-    },[])
+    const categories = useLoaderData()
+    console.log(categories)
     return (
-        <div>
-            <h2>all meal</h2>
-            <div className="grid grid-cols-4">
-                {
-                    categorys.map((category, i) => <Category key={i} category={category}></Category>)
-                }
-            </div>
+        <div className="my-6">
+            <h2>All Categories</h2>
         </div>
     );
 };
