@@ -20,19 +20,14 @@ const router = createBrowserRouter([
         element: <ReChart></ReChart>
       },
       {
-        path: '/category',
+        path: '/',
         loader: () => fetch('https://www.themealdb.com/api/json/v1/1/categories.php'),
         element: <AllMeal></AllMeal>,
-        children: [
-          {
-
-          },
-          {
-            path: '/category/:category',
-            loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.category}`),
-            element: <SingleCategory></SingleCategory>
-          }
-        ]
+      },
+      {
+        path: '/category/:category',
+        loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.category}`),
+        element: <SingleCategory></SingleCategory>
       },
     ]
   },
