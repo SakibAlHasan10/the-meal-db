@@ -6,6 +6,9 @@ import Home from './Components/Home/Home'
 import ReChart from './Components/ReChart/ReChart'
 import ErrorPage from './Components/ErroePage/ErrorPage'
 import AllMeal from './Components/AllMeal/AllMeal'
+import SingleCategory from './Components/SingleCategory/SingleCategory'
+// import SingleCategory from './Components/SingleCategory/SingleCategory'
+// import AllMaleButton from './Components/AllMeal/AllMaleButton'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -19,9 +22,18 @@ const router = createBrowserRouter([
       {
         path: '/category',
         loader: () => fetch('https://www.themealdb.com/api/json/v1/1/categories.php'),
-        element: <AllMeal></AllMeal>
-      }
+        element: <AllMeal></AllMeal>,
+        children: [
+          {
 
+          },
+          {
+            path: '/category/:category',
+            loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.category}`),
+            element: <SingleCategory></SingleCategory>
+          }
+        ]
+      },
     ]
   },
 ])
