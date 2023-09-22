@@ -11,11 +11,11 @@ const route = createBrowserRouter([
     element: <Home></Home>,
     errorElement: <ErrorPage></ErrorPage>,
     children:[
-      {
-        path: '/',
-        element: <AllMeal></AllMeal>,
-        loader:()=> fetch('www.themealdb.com/api/json/v1/1/categories.php'),
-      }
+      // {
+      //   path: '/',
+      //   element: <AllMeal></AllMeal>,
+      //   loader:()=> fetch('www.themealdb.com/api/json/v1/1/categories.php'),
+      // }
     ]
   },
 ])

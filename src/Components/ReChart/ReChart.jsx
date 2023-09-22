@@ -1,8 +1,6 @@
-import React, { PureComponent } from 'react';
 import {
     ComposedChart,
     Line,
-    Area,
     Bar,
     XAxis,
     YAxis,
@@ -27,6 +25,7 @@ const ReChart = () => {
     // static demoUrl = 'https://codesandbox.io/s/composed-chart-of-same-data-i67zd';
     return (
         <div>
+            <h2 className='text-4xl'>ReChart</h2>
             <ResponsiveContainer width={'100%'} height={500}>
             <ComposedChart width={500} height={300} data={students} margin={{top:20, bottom:20, left:20, right:20}}>
             <CartesianGrid stroke="#f5f5f5" />
